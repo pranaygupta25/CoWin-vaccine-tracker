@@ -36,13 +36,39 @@ function getData(){
         let pr;
         pr="";
         let temp;
+        let out =``;
+        let sessionDetails =``;
         for (var i=0; i<data.centers.length; i++){
-            if(checkMinAge(data.centers[i])){
-                temp = data.centers[i].name;
-                for(var j=0; j< data.centers[i].sessions.length; j++){
-                    var f = data.centers[i].sessions[j].vaccine;
+            temp = data.centers[i];
+            if(true){
+                for(var z=0; z<temp.sessions.length; z++){
+                    if(true){
+                        sessionDetails += `  <div class="sessions">
+                                                <h6>Date:</h6>
+                                                <p>${temp.sessions[z].date}</p>
+                                                <h6>Available Vaccine:</h6>
+                                                <p>${temp.sessions[z].vaccine}</p>
+                                                <h6>Available Capacity:</h6>
+                                                <p>${temp.sessions[z].available_capacity}</p>
+                                                <h6>Available time slots:</h6>
+                                                <p>${temp.sessions[z].slots}</p>
+                                            </div>`;
+                    }
                 }
-                pr = pr+temp+"    "+f+"<br>";
+
+                out += ` <div class="card">
+                            <div class="general">
+                                <h6>Vaccination Center:</h6>
+                                <p>${temp.name}
+                                ${temp.address}</p>
+                                <p>Block Name: ${temp.block_name}</p>
+                                <p>${temp.district_name}</p>
+                                <h6>Fee Details:</h6>
+                                <p>${temp.fee_type}
+                                ${sessionDetails}</p>
+                            </div>
+                        </div>`;
+                pr = out;
             }
         }
         console.log(pr);
