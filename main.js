@@ -35,43 +35,55 @@ function getData(){
         let temp;
         let out =``;
         let sessionDetails =``;
-        for (var i=0; i<data.centers.length; i++){
-            temp = data.centers[i];
-            if(checkMinAge(temp)){
-                for(var z=0; z<temp.sessions.length; z++){
-                    if(temp.sessions[z].min_age_limit==18){
-                        sessionDetails += `  <div class="sessions">
-                                                <h6>Date:</h6>
-                                                <p class="date">${temp.sessions[z].date}</p>
-                                                <h6>Available Vaccine:</h6>
-                                                <p class="vaccine">${temp.sessions[z].vaccine}</p>
-                                                <h6>Available Capacity:</h6>
-                                                <p class="capacity">${temp.sessions[z].available_capacity}</p>
-                                                <h6>Available time slots:</h6>
-                                                <p class="slots">${temp.sessions[z].slots}</p>
-                                            </div>`;
+        try{
+            for (var i=0; i<data.centers.length; i++){
+                temp = data.centers[i];
+                if(checkMinAge(temp)){
+                    for(var z=0; z<temp.sessions.length; z++){
+                        if(temp.sessions[z].min_age_limit==18){
+                            sessionDetails += `  <div class="sessions">
+                                                    <h6>Date:</h6>
+                                                    <p class="date">${temp.sessions[z].date}</p>
+                                                    <h6>Available Vaccine:</h6>
+                                                    <p class="vaccine">${temp.sessions[z].vaccine}</p>
+                                                    <h6>Available Capacity:</h6>
+                                                    <p class="capacity">${temp.sessions[z].available_capacity}</p>
+                                                    <h6>Available time slots:</h6>
+                                                    <p class="slots">${temp.sessions[z].slots}</p>
+                                                </div>`;
+                        }
                     }
+    
+                    out += ` <div class="card">
+                                <div class="general">
+                                    <h6>Vaccination Center:</h6>
+                                    <p class="name">${temp.name}</p>
+                                    <div class="address">
+                                    <p>${temp.address}</p>
+                                    <p>Block Name: ${temp.block_name}</p>
+                                    <p>${temp.district_name}</p>
+                                    </div>
+                                    <h6>Fee Details:</h6>
+                                    <div class="fee">
+                                    <p>${temp.fee_type}</p>
+                                    </div>
+                                    </div>
+                                    <div class= "sessionTotal">${sessionDetails}</div>
+                            </div>`;
+    
+                    pr = out;
                 }
-
-                out += ` <div class="card">
-                            <div class="general">
-                                <h6>Vaccination Center:</h6>
-                                <p class="name">${temp.name}</p>
-                                <div class="address">
-                                <p>${temp.address}</p>
-                                <p>Block Name: ${temp.block_name}</p>
-                                <p>${temp.district_name}</p>
-                                </div>
-                                <h6>Fee Details:</h6>
-                                <div class="fee">
-                                <p>${temp.fee_type}</p>
-                                </div>
-                                </div>
-                                <div class= "sessionTotal">${sessionDetails}</div>
-                        </div>`;
-
-                pr = out;
             }
+        }
+        catch(err){
+            pr =    `
+                    <div class="card">
+                    <div class="pinError">
+                    <h6>Invalid Pincode</h6>
+                    <p>Please try again</p>
+                    </div>
+                    </div>
+                    `;
         }
 
         if(pr.length == 0){
