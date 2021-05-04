@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.overall{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+}
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
