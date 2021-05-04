@@ -22,6 +22,9 @@ footer{
     padding: 10px;
     font-size: 0.75em;
 }
+a{
+    text-decoration: none;
+}
 .overall{
     display: flex;
     flex-direction: column;
