@@ -74,6 +74,7 @@ function getData(){
                     pr = out;
                 }
             }
+            document.getElementById("footer").style.display="none";
         }
         catch(err){
             pr =    `
@@ -84,6 +85,7 @@ function getData(){
                     </div>
                     </div>
                     `;
+            document.getElementById("footer").style.display="inline";
         }
 
         if(pr.length == 0){
@@ -95,6 +97,7 @@ function getData(){
                     </div>
                     </div>
                     `;
+            document.getElementById("footer").style.display="inline";
         }
         document.getElementById("ans").innerHTML = pr;
     }
