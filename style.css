@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary-bg: #eee;
+    --highlight: rgba(255, 255, 255, 0.5);
+    --shadow: rgba(0, 0, 0, 0.03);
+}
+body{
+    background-color: var(--primary-bg);
+    /* background-color: white; */
 }
 .overall{
     display: flex;
@@ -12,8 +24,47 @@
 .container{
     display: flex;
     flex-direction: column;
-    margin: 5px;
-    padding: 5px;
+    align-items: center;
+}
+.default{
+    margin-top: 5px;
+}
+input[type=number]{
+    background-color: var(--primary-bg);
+    border: none;
+    border-bottom: solid 2px rgb(127, 127, 127);
+    transition: all 1s;
+}
+input[type=number]:focus{
+    /* display: none; */
+    /* background-color: aqua; */
+    outline: none;
+    border-bottom: solid 2px green;
+}
+#submit{
+    padding: 10px 30px;
+    margin: 10px 0 0 0;
+    background-color: var(--primary-bg);
+    border: none;
+    border-radius: 15px;
+    box-shadow: -6px -6px 6px 0px var(--highlight), 6px 6px 6px 0px var(--shadow);
+    filter: brightness(0.95);
+}
+#submit:hover{
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+.input{
+    margin: 20px;
+    padding: 20px;
+    width: 50vw;
+    height: auto;
+    background-color: var(--primary-bg);
+    border-radius: 20px;
+    box-shadow: -6px -6px 6px 0px var(--highlight), 6px 6px 6px 0px var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 input[type=number]::-webkit-inner-spin-button{
     -webkit-appearance: none;
@@ -26,28 +77,62 @@ input[type=number]::-webkit-inner-spin-button{
 
 }
 .card{
-    padding: 5px;
-    margin: 5px;
-    background-color: antiquewhite;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: var(--primary-bg);
 }
 .general h6{
     font-size: 1em;
+    filter: opacity(0.5);
 }
 .general p{
     font-size: 1.2em;
 }
 .general, .sessionTotal{
-    background-color: rgba(240, 248, 255, 0.4);
-    margin: 5px 0;
-    padding: 5px;
+    background-color: var(--primary-bg);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: -6px -6px 6px 0px var(--highlight), 6px 6px 6px 0px var(--shadow);
 }
 
 .sessionTotal h6{
     font-size: 0.9em;
+    filter: opacity(0.5);
 }
 .sessionTotal p{
     font-size: 0.8em;
 }
 .sessions{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Card Contents */
+.name{
+    font-weight: 600;
+}
+.address{
+    font-size: 0.6em;
+    filter: opacity(0.75);
+}
+.fee{
+    font-size: 0.7em;
+    font-weight: 500;
+    color: lime;
+    filter: opacity(0.5);
+}
+.date{
+    font-weight: 400;
+}
+.vaccine{
+    font-weight: 600;
+}
+.capacity{
+    font-weight: 600;
+    color: tomato;
+}
+.slots{
+    font-weight: 400;
+    text-transform: lowercase;
 }

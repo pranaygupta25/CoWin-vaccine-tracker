@@ -45,13 +45,13 @@ function getData(){
                     if(temp.sessions[z].min_age_limit==18){
                         sessionDetails += `  <div class="sessions">
                                                 <h6>Date:</h6>
-                                                <p>${temp.sessions[z].date}</p>
+                                                <p class="date">${temp.sessions[z].date}</p>
                                                 <h6>Available Vaccine:</h6>
-                                                <p>${temp.sessions[z].vaccine}</p>
+                                                <p class="vaccine">${temp.sessions[z].vaccine}</p>
                                                 <h6>Available Capacity:</h6>
-                                                <p>${temp.sessions[z].available_capacity}</p>
+                                                <p class="capacity">${temp.sessions[z].available_capacity}</p>
                                                 <h6>Available time slots:</h6>
-                                                <p>${temp.sessions[z].slots}</p>
+                                                <p class="slots">${temp.sessions[z].slots}</p>
                                             </div>`;
                     }
                 }
@@ -59,12 +59,16 @@ function getData(){
                 out += ` <div class="card">
                             <div class="general">
                                 <h6>Vaccination Center:</h6>
-                                <p>${temp.name}
-                                ${temp.address}</p>
+                                <p class="name">${temp.name}</p>
+                                <div class="address">
+                                <p>${temp.address}</p>
                                 <p>Block Name: ${temp.block_name}</p>
                                 <p>${temp.district_name}</p>
+                                </div>
                                 <h6>Fee Details:</h6>
+                                <div class="fee">
                                 <p>${temp.fee_type}</p>
+                                </div>
                                 </div>
                                 <div class= "sessionTotal">${sessionDetails}</div>
                         </div>`;
