@@ -115,6 +115,9 @@ input[type=number]::-webkit-inner-spin-button{
     text-align: center;
     padding: 10px;
 }
+.pinError, .error{
+    width: 500px;
+}
 .pinError h6{
     font-size: 1em;
     text-align: center;
