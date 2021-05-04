@@ -30,3 +30,11 @@ input[type=number]::-webkit-inner-spin-button{
     margin: 5px;
     background-color: antiquewhite;
 }
+.card h6{
+    font-size: 1em;
+}
+.general, .sessionTotal{
+    background-color: rgba(240, 248, 255, 0.4);
+    margin: 5px 0;
+    padding: 5px;
+}

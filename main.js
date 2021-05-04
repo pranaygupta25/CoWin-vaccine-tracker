@@ -64,9 +64,9 @@ function getData(){
                                 <p>Block Name: ${temp.block_name}</p>
                                 <p>${temp.district_name}</p>
                                 <h6>Fee Details:</h6>
-                                <p>${temp.fee_type}
-                                ${sessionDetails}</p>
-                            </div>
+                                <p>${temp.fee_type}</p>
+                                </div>
+                                <div class= "sessionTotal">${sessionDetails}</div>
                         </div>`;
 
                 pr = out;
