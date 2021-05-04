@@ -40,9 +40,9 @@ function getData(){
         let sessionDetails =``;
         for (var i=0; i<data.centers.length; i++){
             temp = data.centers[i];
-            if(true){
+            if(checkMinAge(temp)){
                 for(var z=0; z<temp.sessions.length; z++){
-                    if(true){
+                    if(temp.sessions[z].min_age_limit==18){
                         sessionDetails += `  <div class="sessions">
                                                 <h6>Date:</h6>
                                                 <p>${temp.sessions[z].date}</p>
@@ -68,6 +68,7 @@ function getData(){
                                 ${sessionDetails}</p>
                             </div>
                         </div>`;
+
                 pr = out;
             }
         }
