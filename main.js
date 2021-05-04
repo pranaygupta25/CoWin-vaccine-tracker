@@ -1,11 +1,9 @@
 function getData(){
-    var pin = document.getElementById("pin").value;
-    console.log(typeof pin)
+    var pin = document.getElementById("pin").value; 
 
     function checkMinAge(obj){
         let flag = false;
         for(let i=0; i<obj.sessions.length; i++){
-            console.log(obj.sessions[i].min_age_limit);
             if(obj.sessions[i].min_age_limit == 18){
                 flag = true;
             }
@@ -31,7 +29,6 @@ function getData(){
 
         const res = await fetch(req_url);
         var data = await res.json();
-        console.log(data);
 
         let pr;
         pr="";
@@ -76,7 +73,17 @@ function getData(){
                 pr = out;
             }
         }
-        console.log(pr);
+
+        if(pr.length == 0){
+            pr =    `
+                    <div class="card">
+                    <div class="error">
+                    <h6>Sorry, there seems to be no available vaccination centers for the next 7 days</h6>
+                    <p>Please try again later</p>
+                    </div>
+                    </div>
+                    `;
+        }
         document.getElementById("ans").innerHTML = pr;
     }
     api_call(pin);
