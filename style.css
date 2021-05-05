@@ -40,9 +40,14 @@ a{
 .default{
     margin-top: 5px;
 }
+#pinDiv{
+    display: flex;
+    justify-content: center;
+}
 input[type=number]{
     background-color: var(--primary-bg);
     border: none;
+    width: 75%;
     border-bottom: solid 2px rgb(127, 127, 127);
     transition: all 1s;
 }
@@ -50,6 +55,7 @@ input[type=number]:focus{
     outline: none;
     border-bottom: solid 2px green;
 }
+
 #submit{
     padding: 10px 30px;
     margin: 10px 0 0 0;
