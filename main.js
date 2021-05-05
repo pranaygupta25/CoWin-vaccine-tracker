@@ -92,7 +92,7 @@ function getData(){
             pr =    `
                     <div class="card">
                     <div class="error">
-                    <h6>Sorry, there seems to be no available vaccination centers for the next 7 days</h6>
+                    <h6>Sorry, there seems to be no available <br>Vaccination Centers for the next 7 days</h6>
                     <p>Please try again later</p>
                     </div>
                     </div>
